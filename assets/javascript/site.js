@@ -17,8 +17,8 @@ function keepOptionsVisible(){
         adjustTray();
     }
 }
-
+//Currently working on making sure that navbar is always visible
 $(function(){
     $(".nav-button").click(changeTrayStatus);
-    $(window).resize(keepOptionsVisible);
+    //$(window).resize(keepOptionsVisible);
 });
