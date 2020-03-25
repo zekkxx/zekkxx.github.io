@@ -1,14 +1,14 @@
 var projects = [
-    {"name": "Word Guessing Game", "img": "WordGuessGame", "link": "https://zekkxx.github.io/word-guess-game/"},
+    {"name": "Word Guessing Game", "img": "word_guess_game", "link": "https://zekkxx.github.io/word-guess-game/"},
     {"name": "Memory Game", "img": "memory_game", "link": "https://shielded-ridge-15296.herokuapp.com/"},
-    {"name": "Trivia Game", "img": "TriviaGame", "link": "https://zekkxx.github.io/trivia-game/"},
-    {"name": "Basic Game", "img": "StarWarsGame", "link": "https://zekkxx.github.io/basic-game/"},
+    {"name": "Trivia Game", "img": "trivia_game", "link": "https://zekkxx.github.io/trivia-game/"},
+    {"name": "Basic Game", "img": "star_wars_game", "link": "https://zekkxx.github.io/basic-game/"},
     {"name": "LIRI", "img": "liri", "link": "https://github.com/zekkxx/liri"},
     {"name": "Bamazon", "img": "bamazon", "link": "https://github.com/zekkxx/bamazon"},
-    {"name": "Soccer Fan Central", "img": "SoccerFanCentral1", "link": "https://iwijetunge.github.io/project1/"},
+    {"name": "Soccer Fan Central", "img": "soccer_fan_central", "link": "https://iwijetunge.github.io/project1/"},
     {"name": "Giddy App", "img": "giddy_app", "link": "https://cryptic-tor-78469.herokuapp.com/"},
     {"name": "Prota", "img": "prota", "link": "prota.herokuapp.com"},
-    {"name": "NYT Search App", "img": "nyt-search", "link": "https://zekkxx.github.io/new-york-times-app/"}
+    {"name": "NYT Search App", "img": "nyt_search", "link": "https://zekkxx.github.io/new-york-times-app/"}
 ];
 
 function loadProjectsToContent(){
