@@ -88,7 +88,7 @@ footer{
     margin-bottom: 5px;
     background-color: #cccccc;
 }
-.projectContent{
+#projectContent{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -109,6 +109,10 @@ footer{
     width: 300px;
     margin: 25px;
     position: relative;
+}
+.imgContainer img{
+    height: 300px;
+    width: 300px;
 }
 #aboutImg{
     float: left;
