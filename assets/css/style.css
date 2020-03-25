@@ -83,9 +83,6 @@ footer{
 .mainContent a:hover{
     text-shadow: 2px 2px 10px #cc5500;
 }
-.hiddenLink{
-    text-decoration: none;
-}
 .breakBar{
     height: 5px;
     margin-bottom: 5px;
@@ -125,14 +122,6 @@ footer{
     nav{
         position: fixed;
     }
-    .nav-list{
-        width: 100%;
-        justify-content: center;
-    }
-    .nav-list a{
-        display: inline;
-        opacity: 1;
-    }
     .nav-container{
         width: 100%;
         justify-content: center;
@@ -148,24 +137,6 @@ footer{
 @media only screen and (max-width: 600px){
     nav{
         justify-content: center;
-    }
-    .nav-button{
-        display: block;
-        position: fixed;
-        right: 3px;
-        top: 3px;
-        padding: 15px;
-        background-color: #AFE0FF;
-        border: none;
-        outline: none;
-        cursor: pointer;
-    }
-    .nav-list{
-        display: block;
-        padding: 0;
-    }
-    .nav-list a{
-        display: block;
     }
 }
 
