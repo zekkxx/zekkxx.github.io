@@ -6,6 +6,7 @@ html, body{
 }
 html{
     background-image: url(../images/Open_Sky.jpg);
+    background-color: #776B99;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -144,8 +145,8 @@ footer{
     }
 }
 
-@media only screen and (max-width: 320px){
-    .logo{
-        display: none;
+@media only screen and (max-width: 400px){
+    html{
+        background-image: none;
     }
 }
