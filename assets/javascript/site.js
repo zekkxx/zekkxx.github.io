@@ -11,6 +11,14 @@ var projects = [
     {"name": "NYT Search App", "img": "nyt_search", "link": "https://zekkxx.github.io/new-york-times-app/"}
 ];
 
+function applySmoothScrolling(){
+    $("#logo-link").on("click", function(){
+        $('html, body').animate({
+            scrollTop: $("#aboutImg").offset().top
+          }, 800);
+    });
+}
+
 function loadProjectsToContent(){
     var projectContent = document.getElementById("projectContent");
     for(let i=0; i<projects.length;i++){
@@ -39,4 +47,9 @@ function loadProjectsToContent(){
     }
 }
 
-window.onload = loadProjectsToContent;
+function onSiteLoaded() {
+    applySmoothScrolling();
+    loadProjectsToContent();
+}
+
+window.onload = onSiteLoaded;
