@@ -89,7 +89,7 @@ footer{
     margin-bottom: 5px;
     background-color: #cccccc;
 }
-#projectContent{
+.projectContent{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
