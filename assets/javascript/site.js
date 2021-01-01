@@ -20,13 +20,17 @@ function applySmoothScrolling(){
 
 function loadProjectSection(){
     var projectSection = document.createElement("section");
+
     var title = document.createElement("h1");
     title.textContent="Projects"
+    
     var description = document.createElement("p");
     description.textContent= "A few of these projects are fully back-end applications, clicking on one of these projects will bring you to the Github repository for the project."
         +"Additionally, due to the constraints of my wallet, the projects hosted by the free tier of Heroku may have a higher than average loading time when selected.";
-    var breakBar = document.createElement("div");
+    
+        var breakBar = document.createElement("div");
     breakBar.setAttribute("class", "breakBar");
+    
     var projectContent = document.createElement("div");
     projectContent.setAttribute("class", "projectContent")
     projects.forEach(project => {
@@ -65,8 +69,37 @@ function createProjectContainer(project){
     return projectContainer;
 }
 
+function loadAboutMeSection(){
+    var aboutSection = document.createElement("section");
+
+    var myImg = document.createElement("img");
+    myImg.setAttribute("id", "aboutImg");
+    myImg.setAttribute("src", "assets/images/KieranAnthony2.jpg");
+    myImg.setAttribute("alt", "Kieran Anthony");
+
+    var title = document.createElement("h1");
+    title.textContent="Kieran Anthony"
+    
+    var breakBar = document.createElement("div");
+    breakBar.setAttribute("class", "breakBar");
+
+    var description = document.createElement("p");
+    description.textContent= "Full Stack Developer with skills in backend architecture and design. Versed in error prevention, code refinement, and quality assurance testing for multi-platform projects. Effective communicator with strengths in problem solving, lateral and analytical thinking. Proven ability to work collaboratively in a diverse and fast moving environment to deliver solutions at and above project expectations."
+    
+    var description2 = document.createElement("p");
+    description2.textContent= "Based out of Minnesota, I'm currently looking for jobs in and around the Twin Cities Metro Area.";
+
+    aboutSection.appendChild(myImg);
+    aboutSection.appendChild(title);
+    aboutSection.appendChild(breakBar);
+    aboutSection.appendChild(description);
+    aboutSection.appendChild(description2)
+    document.getElementById("main").appendChild(aboutSection);
+}
+
 function onSiteLoaded() {
     loadProjectSection();
+    loadAboutMeSection();
     applySmoothScrolling();
 }
 
