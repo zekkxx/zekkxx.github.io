@@ -10,12 +10,8 @@ var projects = [
     {"name": "NYT Search App", "img": "nyt_search", "link": "https://zekkxx.github.io/new-york-times-app/", "repo":"https://github.com/zekkxx/new-york-times-app"}
 ];
 
-function applySmoothScrolling(){
-    $("#logo-link").on("click", function(){
-        $('html, body').animate({
-            scrollTop: $("#aboutImg").offset().top
-          }, 800);
-    });
+function applyUpdatedSmoothScrolling(){
+    document.getElementById("logo-link").addEventListener("click", ()=> smoothScroll("aboutImg"));
 }
 
 function loadProjectSection(){
@@ -108,7 +104,61 @@ function loadAboutMeSection(){
 function onSiteLoaded() {
     loadProjectSection();
     loadAboutMeSection();
-    applySmoothScrolling();
+    //applyUpdatedSmoothScrolling is semi-functional on Firefox
+    applyUpdatedSmoothScrolling();
+}
+
+function currentYPosition(){
+    // For Firefox, Chrome, Opera, Safari
+    if(self.pageYOffset) return self.pageYOffset;
+    // IE 6 - standards mode
+    if(document.documentElement && document.documentElement.scrollTop){
+        return document.documentElement.scrollTop
+    }
+    // IE 6/7/8
+    if (document.body.scrollTop) return document.body.scrollTop;
+    return 0;
+}
+
+function elmYPosition(eId){
+    const elm=document.getElementById(eId)
+    let yPos=elm.offsetTop;
+    let node=elm;
+    while(node.offsetParent && node.offsetParent != document.body){
+        node = node.offsetParent;
+        yPos += node.offsetTop;
+    }
+    return yPos;
+}
+
+function smoothScroll(eId){
+    const startY = currentYPosition();
+    const stopY = elmYPosition(eId);
+    const distance = stopY > startY ? stopY-startY : startY-stopY;
+    if(distance<100){
+        scrollTo(0, stopY);
+        return;
+    }
+    let speed = Math.round(distance/100);
+    if(speed>=20) speed=20;
+    const step = Math.round(distance/25);
+    let leapY = stopY > startY ? startY + step : startY - step;
+    let timer = 0;
+    if(stopY>startY){
+        for(let i=startY; i<stopY; i+=step){
+            setTimeout("window.scrollTo(0, "+leapY+")", timer*speed);
+            leapY += step;
+            if(leapY>stopY) leapY=stopY;
+            timer++;
+        }
+        return;
+    }
+    for(let i=startY; i>stopY; i-=step){
+        setTimeout("window.scrollTo(0, "+leapY+")", timer*speed);
+        leapY -= step;
+        if(leapY<stopY) leapY=stopY;
+        timer++;
+    }
 }
 
 window.onload = onSiteLoaded;
