@@ -86,14 +86,22 @@ function loadAboutMeSection(){
     var description = document.createElement("p");
     description.textContent= "Full Stack Developer with skills in backend architecture and design. Versed in error prevention, code refinement, and quality assurance testing for multi-platform projects. Effective communicator with strengths in problem solving, lateral and analytical thinking. Proven ability to work collaboratively in a diverse and fast moving environment to deliver solutions at and above project expectations."
     
-    var description2 = document.createElement("p");
-    description2.textContent= "Based out of Minnesota, I'm currently looking for jobs in and around the Twin Cities Metro Area.";
+    var location = document.createElement("p");
+    location.textContent= "Based out of Minnesota, I'm currently looking for jobs in and around the Twin Cities Metro Area.";
+
+    var contact = document.createElement("h3");
+    contact.setAttribute("class", "centered");
+    var contactLink = document.createElement("a");
+    contactLink.setAttribute("href", "mailto:anthony.kieran.r@gmail.com");
+    contactLink.textContent = "Contact me by email";
+    contact.appendChild(contactLink);
 
     aboutSection.appendChild(myImg);
     aboutSection.appendChild(title);
     aboutSection.appendChild(breakBar);
     aboutSection.appendChild(description);
-    aboutSection.appendChild(description2)
+    aboutSection.appendChild(location)
+    aboutSection.appendChild(contact);
     document.getElementById("main").appendChild(aboutSection);
 }
 

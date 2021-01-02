@@ -67,7 +67,7 @@ footer{
     color: #43464b;
     text-decoration: none;
 }
-.mainContent{
+#main{
     width: 80%;
     color: white;
     font-size: 1.3em;
@@ -78,10 +78,10 @@ footer{
         -1px 1px 0 black,
         1px 1px 0 black;
 }
-.mainContent a{
+#main a{
     color: white;
 }
-.mainContent a:hover{
+#main a:hover{
     text-shadow: 2px 2px 10px #cc5500;
 }
 .breakBar{
@@ -134,7 +134,7 @@ footer{
     .logo{
         width: 100%;
     }
-    .mainContent{
+    #main{
         margin-top: 20%;
     }
 }
