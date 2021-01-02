@@ -15,22 +15,22 @@ function applyUpdatedSmoothScrolling(){
 }
 
 function loadProjectSection(){
-    var projectSection = document.createElement("section");
+    const projectSection = document.createElement("section");
 
-    var title = document.createElement("h1");
+    const title = document.createElement("h1");
     title.textContent="Projects"
     
-    var description = document.createElement("p");
+    const description = document.createElement("p");
     description.textContent= "A few of these projects are fully back-end applications, clicking on one of these projects will bring you to the Github repository for the project."
         +"Additionally, due to the constraints of my wallet, the projects hosted by the free tier of Heroku may have a higher than average loading time when selected.";
     
-        var breakBar = document.createElement("div");
+        const breakBar = document.createElement("div");
     breakBar.setAttribute("class", "breakBar");
     
-    var projectContent = document.createElement("div");
+    const projectContent = document.createElement("div");
     projectContent.setAttribute("class", "projectContent")
     projects.forEach(project => {
-        var projectContainer = createProjectContainer(project);
+        const projectContainer = createProjectContainer(project);
         projectContent.appendChild(projectContainer);
     });
 
@@ -42,19 +42,19 @@ function loadProjectSection(){
 }
 
 function createProjectContainer(project){
-    var projectContainer = document.createElement("div");
+    const projectContainer = document.createElement("div");
     projectContainer.setAttribute("class", "imgContainer");
 
-    var projectLink = document.createElement("a");
+    const projectLink = document.createElement("a");
     projectLink.setAttribute("target", "_blank");
     projectLink.setAttribute("href", project.link);
 
-    var projectImg = document.createElement("img");
+    const projectImg = document.createElement("img");
     projectImg.setAttribute("src", "assets/images/projects/"
         + project.img + ".png");
     projectImg.setAttribute("alt", project.name);
 
-    var projectSpan = document.createElement("span");
+    const projectSpan = document.createElement("span");
     projectSpan.setAttribute("class", "imgText");
     projectSpan.textContent = project.name;
 
@@ -66,28 +66,28 @@ function createProjectContainer(project){
 }
 
 function loadAboutMeSection(){
-    var aboutSection = document.createElement("section");
+    const aboutSection = document.createElement("section");
 
-    var myImg = document.createElement("img");
+    const myImg = document.createElement("img");
     myImg.setAttribute("id", "aboutImg");
     myImg.setAttribute("src", "assets/images/KieranAnthony2.jpg");
     myImg.setAttribute("alt", "Kieran Anthony");
 
-    var title = document.createElement("h1");
+    const title = document.createElement("h1");
     title.textContent="Kieran Anthony"
     
-    var breakBar = document.createElement("div");
+    const breakBar = document.createElement("div");
     breakBar.setAttribute("class", "breakBar");
 
-    var description = document.createElement("p");
+    const description = document.createElement("p");
     description.textContent= "Full Stack Developer with skills in backend architecture and design. Versed in error prevention, code refinement, and quality assurance testing for multi-platform projects. Effective communicator with strengths in problem solving, lateral and analytical thinking. Proven ability to work collaboratively in a diverse and fast moving environment to deliver solutions at and above project expectations."
     
-    var location = document.createElement("p");
+    const location = document.createElement("p");
     location.textContent= "Based out of Minnesota, I'm currently looking for jobs in and around the Twin Cities Metro Area.";
 
-    var contact = document.createElement("h3");
+    const contact = document.createElement("h3");
     contact.setAttribute("class", "centered");
-    var contactLink = document.createElement("a");
+    const contactLink = document.createElement("a");
     contactLink.setAttribute("href", "mailto:anthony.kieran.r@gmail.com");
     contactLink.textContent = "Contact me by email";
     contact.appendChild(contactLink);
@@ -133,7 +133,8 @@ function elmYPosition(eId){
 
 function smoothScroll(eId){
     const startY = currentYPosition();
-    const stopY = elmYPosition(eId);
+    // This raises the ending point by 75 pixels. Check on this later
+    const stopY = elmYPosition(eId)-75;
     const distance = stopY > startY ? stopY-startY : startY-stopY;
     if(distance<100){
         scrollTo(0, stopY);
@@ -145,7 +146,7 @@ function smoothScroll(eId){
     let leapY = stopY > startY ? startY + step : startY - step;
     let timer = 0;
     if(stopY>startY){
-        for(let i=startY; i<stopY; i+=step){
+        for(let i=startY; i<=stopY; i+=step){
             setTimeout("window.scrollTo(0, "+leapY+")", timer*speed);
             leapY += step;
             if(leapY>stopY) leapY=stopY;
@@ -153,7 +154,7 @@ function smoothScroll(eId){
         }
         return;
     }
-    for(let i=startY; i>stopY; i-=step){
+    for(let i=startY; i>=stopY; i-=step){
         setTimeout("window.scrollTo(0, "+leapY+")", timer*speed);
         leapY -= step;
         if(leapY<stopY) leapY=stopY;

@@ -126,6 +126,7 @@ footer{
 @media only screen and (max-width: 900px){
     nav{
         position: fixed;
+        width:100%;
     }
     .nav-container{
         width: 100%;
@@ -142,6 +143,7 @@ footer{
 @media only screen and (max-width: 600px){
     nav{
         justify-content: center;
+        width:100%;
     }
 }
 
