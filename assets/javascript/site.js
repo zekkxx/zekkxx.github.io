@@ -1,8 +1,9 @@
 var projects = [
-    {"name": "Word Guessing Game", "img": "word_guess_game", "link": "https://zekkxx.github.io/word-guess-game/", "repo":"https://github.com/zekkxx/word-guess-game"},
-    {"name": "Memory Game", "img": "memory_game", "link": "https://shielded-ridge-15296.herokuapp.com/", "repo":"https://github.com/zekkxx/memory-game"},
-    {"name": "Trivia Game", "img": "trivia_game", "link": "https://zekkxx.github.io/trivia-game/", "repo":"https://github.com/zekkxx/trivia-game"},
-    {"name": "Basic Game", "img": "star_wars_game", "link": "https://zekkxx.github.io/basic-game/", "repo":"https://github.com/zekkxx/basic-game"},
+    // {"name": "Word Guessing Game", "img": "word_guess_game", "link": "https://zekkxx.github.io/word-guess-game/", "repo":"https://github.com/zekkxx/word-guess-game"},
+    // {"name": "Memory Game", "img": "memory_game", "link": "https://shielded-ridge-15296.herokuapp.com/", "repo":"https://github.com/zekkxx/memory-game"},
+    // {"name": "Trivia Game", "img": "trivia_game", "link": "https://zekkxx.github.io/trivia-game/", "repo":"https://github.com/zekkxx/trivia-game"},
+    // {"name": "Basic Game", "img": "star_wars_game", "link": "https://zekkxx.github.io/basic-game/", "repo":"https://github.com/zekkxx/basic-game"},
+    {"name": "Game Collection", "img":"trivia_game", "link": "https://zekkxx.github.io/trivia-game/", "repo": "https://github.com/zekkxx/games"},
     {"name": "LIRI", "img": "liri", "link": "https://github.com/zekkxx/liri", "repo":"https://github.com/zekkxx/liri"},
     {"name": "Bamazon", "img": "bamazon", "link": "https://github.com/zekkxx/bamazon", "repo":"https://github.com/zekkxx/bamazon"},
     {"name": "Giddy App", "img": "giddy_app", "link": "https://giddyapp.herokuapp.com/", "repo":"https://github.com/zekkxx/giddy-app"},
@@ -11,7 +12,7 @@ var projects = [
 ];
 
 function applyUpdatedSmoothScrolling(){
-    document.getElementById("logo-link").addEventListener("click", ()=> smoothScroll("aboutImg"));
+    document.getElementById("logoLink").addEventListener("click", ()=> smoothScroll("aboutMe"));
 }
 
 function loadProjectSection(){
@@ -67,6 +68,7 @@ function createProjectContainer(project){
 
 function loadAboutMeSection(){
     const aboutSection = document.createElement("section");
+    aboutSection.setAttribute("id", "aboutMe");
 
     const myImg = document.createElement("img");
     myImg.setAttribute("id", "aboutImg");
@@ -134,7 +136,7 @@ function elmYPosition(eId){
 function smoothScroll(eId){
     const startY = currentYPosition();
     // This raises the ending point by 75 pixels. Check on this later
-    const stopY = elmYPosition(eId)-75;
+    const stopY = elmYPosition(eId);
     const distance = stopY > startY ? stopY-startY : startY-stopY;
     if(distance<100){
         scrollTo(0, stopY);
