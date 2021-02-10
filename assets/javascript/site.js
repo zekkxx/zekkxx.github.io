@@ -1,19 +1,11 @@
 var projects = [
-    // {"name": "Word Guessing Game", "img": "word_guess_game", "link": "https://zekkxx.github.io/word-guess-game/", "repo":"https://github.com/zekkxx/word-guess-game"},
-    // {"name": "Memory Game", "img": "memory_game", "link": "https://shielded-ridge-15296.herokuapp.com/", "repo":"https://github.com/zekkxx/memory-game"},
-    // {"name": "Trivia Game", "img": "trivia_game", "link": "https://zekkxx.github.io/trivia-game/", "repo":"https://github.com/zekkxx/trivia-game"},
-    // {"name": "Basic Game", "img": "star_wars_game", "link": "https://zekkxx.github.io/basic-game/", "repo":"https://github.com/zekkxx/basic-game"},
-    {"name": "Game Collection", "img":"trivia_game", "link": "https://zekkxx.github.io/trivia-game/", "repo": "https://github.com/zekkxx/games"},
+    {"name": "Game Collection", "img":"trivia_game", "link": "https://zekkxx.github.io/games/", "repo": "https://github.com/zekkxx/games"},
     {"name": "LIRI", "img": "liri", "link": "https://github.com/zekkxx/liri", "repo":"https://github.com/zekkxx/liri"},
     {"name": "Bamazon", "img": "bamazon", "link": "https://github.com/zekkxx/bamazon", "repo":"https://github.com/zekkxx/bamazon"},
     {"name": "Giddy App", "img": "giddy_app", "link": "https://giddyapp.herokuapp.com/", "repo":"https://github.com/zekkxx/giddy-app"},
     {"name": "Prota", "img": "prota", "link": "prota.herokuapp.com", "repo":"https://github.com/zekkxx/prota"},
     {"name": "NYT Search App", "img": "nyt_search", "link": "https://zekkxx.github.io/new-york-times-app/", "repo":"https://github.com/zekkxx/new-york-times-app"}
 ];
-
-function applyUpdatedSmoothScrolling(){
-    document.getElementById("logoLink").addEventListener("click", ()=> smoothScroll("aboutMe"));
-}
 
 function loadProjectSection(){
     const projectSection = document.createElement("section");
@@ -103,13 +95,6 @@ function loadAboutMeSection(){
     document.getElementById("main").appendChild(aboutSection);
 }
 
-function onSiteLoaded() {
-    loadProjectSection();
-    loadAboutMeSection();
-    //applyUpdatedSmoothScrolling is semi-functional on Firefox
-    applyUpdatedSmoothScrolling();
-}
-
 function currentYPosition(){
     // For Firefox, Chrome, Opera, Safari
     if(self.pageYOffset) return self.pageYOffset;
@@ -162,6 +147,17 @@ function smoothScroll(eId){
         if(leapY<stopY) leapY=stopY;
         timer++;
     }
+}
+
+function applySmoothScrolling(clickTargetID, scrollTargetID){
+    document.getElementById(clickTargetID).addEventListener("click", ()=> smoothScroll(scrollTargetID));
+}
+
+function onSiteLoaded() {
+    loadProjectSection();
+    loadAboutMeSection();
+    //applyUpdatedSmoothScrolling is semi-functional on Firefox
+    applySmoothScrolling("logoLink", "aboutMe");
 }
 
 window.onload = onSiteLoaded;
