@@ -1,23 +1,26 @@
-html, body{
+html, body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
 }
-html{
+
+html {
     background-image: url(../images/Open_Sky.jpg);
     background-color: #776B99;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
-nav{
+
+nav {
     z-index: 1;
     width: 100%;
     font-size: 1.5em;
@@ -29,10 +32,8 @@ nav{
     border-bottom-width: 3px;
     border-bottom-color: #cccccc;
 }
-h2{
-    margin: 0px;
-}
-footer{
+
+footer {
     width: 100%;
     background-color: #43464b;
     border-top-style: solid;
@@ -43,59 +44,58 @@ footer{
     font-size: 18px;
     padding: 15px 0;
 }
-.centered{
+
+.centered {
     text-align: center;
 }
-.nav-container{
+
+.vert-align-middle {
+    vertical-align: middle;
+}
+
+.no-link-decoration {
+    text-decoration: none;
+}
+
+.nav-container {
     width: 80%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     margin: 0 auto;
 }
-.logoImg{
-    display: inline;
-    vertical-align: bottom;
+
+.img-link {
+    vertical-align: middle;
+    text-decoration: none;
 }
-.logo{
+
+.logo {
     padding: 15px 0;
     width: 40%;
     text-align: center;
     background-color: #cc5500;
 }
-.logo a{
+
+.logo a {
     color: #43464b;
     text-decoration: none;
 }
-#main{
-    width: 80%;
-    color: white;
-    font-size: 1.3em;
-    text-shadow: 
-        2px 2px 3px black,
-        -1px -1px 0 black,
-        1px -1px 0 black,
-        -1px 1px 0 black,
-        1px 1px 0 black;
-}
-#main a{
-    color: white;
-}
-#main a:hover{
-    text-shadow: 2px 2px 10px #cc5500;
-}
-.breakBar{
-    height: 5px;
-    margin-bottom: 5px;
+
+.breakbar {
+    height: 3px;
+    margin-bottom: 2px;
     background-color: #cccccc;
 }
-.projectContent{
+
+.project-content {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     padding: 5px;
 }
-.imgText{
+
+.img-text {
     position: absolute;
     width: 300px;
     bottom: 10%;
@@ -106,16 +106,39 @@ footer{
     text-align: center;
     left: 0;
 }
-.imgContainer{
+
+.img-container {
     width: 300px;
     margin: 25px;
     position: relative;
 }
-.imgContainer img{
+
+.img-container img {
     height: 300px;
     width: 300px;
 }
-#aboutImg{
+
+#main {
+    width: 80%;
+    color: white;
+    font-size: 1.3em;
+    text-shadow: 
+        2px 2px 3px black,
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+}
+
+#main a {
+    color: white;
+}
+
+#main a:hover {
+    text-shadow: 2px 2px 10px #cc5500;
+}
+
+#aboutImg {
     float: left;
     height: 250px;
     width: auto;
@@ -124,28 +147,32 @@ footer{
 }
 
 @media only screen and (max-width: 900px){
-    nav{
+    nav {
         position: fixed;
         width:100%;
     }
-    .nav-container{
+
+    .nav-container {
         width: 100%;
         justify-content: center;
     }
-    .logo{
+
+    .logo {
         width: 100%;
     }
-    #main{
+
+    #main {
         margin-top: 20%;
     }
 }
 
 @media only screen and (max-width: 600px){
-    nav{
+    nav {
         justify-content: center;
         width:100%;
     }
-    #aboutMe{
+    
+    #aboutMe {
         padding-top: 75px;
     }
 }

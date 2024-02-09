@@ -1,27 +1,29 @@
 var projects = [
     {"name": "Game Collection", "img":"trivia_game", "link": "https://zekkxx.github.io/games/", "repo": "https://github.com/zekkxx/games"},
-    {"name": "LIRI", "img": "liri", "link": "https://github.com/zekkxx/liri", "repo":"https://github.com/zekkxx/liri"},
-    {"name": "Bamazon", "img": "bamazon", "link": "https://github.com/zekkxx/bamazon", "repo":"https://github.com/zekkxx/bamazon"},
-    {"name": "Giddy App", "img": "giddy_app", "link": "https://giddyapp.herokuapp.com/", "repo":"https://github.com/zekkxx/giddy-app"},
-    {"name": "Prota", "img": "prota", "link": "prota.herokuapp.com", "repo":"https://github.com/zekkxx/prota"},
-    {"name": "NYT Search App", "img": "nyt_search", "link": "https://zekkxx.github.io/new-york-times-app/", "repo":"https://github.com/zekkxx/new-york-times-app"}
+    {"name": "Prota", "img": "prota", "link": "https://prota.herokuapp.com", "repo":"https://github.com/zekkxx/prota"}
 ];
 
-function loadProjectSection(){
+var outsideLinks = [
+    {"name": "LinkedIn", "link": "https://www.linkedin.com/in/kieran-anthony-415908b4/"},
+    {"name": "Github", "link": "https://github.com/zekkxx"},
+    {"name": "Youtube", "link": "https://www.youtube.com/channel/UC3DX7Leok4fRNvY4IXo3MTg/"},
+    {"name": "Twitch", "link": "twitch.tv/mizakuma/"}
+];
+
+function loadProjectSection() {
     const projectSection = document.createElement("section");
 
     const title = document.createElement("h1");
     title.textContent="Projects"
     
     const description = document.createElement("p");
-    description.textContent= "A few of these projects are fully back-end applications, clicking on one of these projects will bring you to the Github repository for the project."
-        +"Additionally, due to the constraints of my wallet, the projects hosted by the free tier of Heroku may have a higher than average loading time when selected.";
+    description.textContent= "A small selection of my personal/independent projects.";
     
-        const breakBar = document.createElement("div");
-    breakBar.setAttribute("class", "breakBar");
+    const breakBar = document.createElement("div");
+    breakBar.setAttribute("class", "breakbar");
     
     const projectContent = document.createElement("div");
-    projectContent.setAttribute("class", "projectContent")
+    projectContent.setAttribute("class", "project-content")
     projects.forEach(project => {
         const projectContainer = createProjectContainer(project);
         projectContent.appendChild(projectContainer);
@@ -34,13 +36,14 @@ function loadProjectSection(){
     document.getElementById("main").appendChild(projectSection);
 }
 
-function createProjectContainer(project){
+function createProjectContainer(project) {
     const projectContainer = document.createElement("div");
-    projectContainer.setAttribute("class", "imgContainer");
+    projectContainer.setAttribute("class", "img-container");
 
     const projectLink = document.createElement("a");
     projectLink.setAttribute("target", "_blank");
-    projectLink.setAttribute("href", project.link);
+    projectLink.setAttribute("rel", "noreferrer noopener");
+    projectLink.setAttribute("href", project.link || project.repo);
 
     const projectImg = document.createElement("img");
     projectImg.setAttribute("src", "assets/images/projects/"
@@ -48,7 +51,7 @@ function createProjectContainer(project){
     projectImg.setAttribute("alt", project.name);
 
     const projectSpan = document.createElement("span");
-    projectSpan.setAttribute("class", "imgText");
+    projectSpan.setAttribute("class", "img-text");
     projectSpan.textContent = project.name;
 
     projectLink.appendChild(projectImg);
@@ -58,7 +61,7 @@ function createProjectContainer(project){
     return projectContainer;
 }
 
-function loadAboutMeSection(){
+function loadAboutMeSection() {
     const aboutSection = document.createElement("section");
     aboutSection.setAttribute("id", "aboutMe");
 
@@ -71,7 +74,7 @@ function loadAboutMeSection(){
     title.textContent="Kieran Anthony"
     
     const breakBar = document.createElement("div");
-    breakBar.setAttribute("class", "breakBar");
+    breakBar.setAttribute("class", "breakbar");
 
     const description = document.createElement("p");
     description.textContent= "Full Stack Developer with skills in backend architecture and design. Versed in error prevention, code refinement, and quality assurance testing for multi-platform projects. Effective communicator with strengths in problem solving, lateral and analytical thinking. Proven ability to work collaboratively in a diverse and fast moving environment to deliver solutions at and above project expectations."
@@ -79,25 +82,55 @@ function loadAboutMeSection(){
     const location = document.createElement("p");
     location.textContent= "Based out of Minnesota, I'm currently looking for jobs in and around the Twin Cities Metro Area.";
 
-    const contact = document.createElement("h3");
-    contact.setAttribute("class", "centered");
+    const specialLinks = document.createElement("h3");
+    specialLinks.setAttribute("class", "centered");
+
     const contactLink = document.createElement("a");
     contactLink.setAttribute("href", "mailto:anthony.kieran.r@gmail.com");
     contactLink.textContent = "Contact me by email";
-    contact.appendChild(contactLink);
+    
+    const resumeLink = document.createElement("a");
+    resumeLink.setAttribute("href", "https://docs.google.com/document/d/1hXVjw8xJ1YroslU6x8WRzVOR65WOAay92RGR-t5AEP8/export?format=pdf");
+    resumeLink.setAttribute("download", "Kieran_Anthony-Resume.pdf");
+    resumeLink.textContent = "Download my resume";
+    
+    specialLinks.appendChild(contactLink);
+    specialLinks.append(" | ");
+    specialLinks.appendChild(resumeLink);
 
     aboutSection.appendChild(myImg);
     aboutSection.appendChild(title);
     aboutSection.appendChild(breakBar);
     aboutSection.appendChild(description);
     aboutSection.appendChild(location)
-    aboutSection.appendChild(contact);
+    aboutSection.appendChild(specialLinks);
+    
     document.getElementById("main").appendChild(aboutSection);
+}
+
+function loadFooterSection() {
+    outsideLinks.forEach(link => {
+        const newLink = document.createElement("a");
+        newLink.setAttribute("href", link.link);
+        newLink.setAttribute("class", "vert-align-middle no-link-decoration");
+        newLink.setAttribute("target", "_blank");
+        newLink.setAttribute("rel", "noreferrer noopener");
+        newLink.setAttribute("style", "margin: 0 2px");
+
+        const linkImg = document.createElement("img");
+        linkImg.setAttribute("src", "assets/images/logos/logo_"+link.name+".png");
+        linkImg.setAttribute("alt", link.name+" logo");
+        linkImg.setAttribute("height", "25px");
+
+        newLink.appendChild(linkImg);
+
+        document.getElementById("pageFooter").appendChild(newLink);
+    });
 }
 
 function currentYPosition(){
     // For Firefox, Chrome, Opera, Safari
-    if(self.pageYOffset) return self.pageYOffset;
+    if(self.scrollY) return self.scrollY;
     // IE 6 - standards mode
     if(document.documentElement && document.documentElement.scrollTop){
         return document.documentElement.scrollTop
@@ -156,6 +189,7 @@ function applySmoothScrolling(clickTargetID, scrollTargetID){
 function onSiteLoaded() {
     loadProjectSection();
     loadAboutMeSection();
+    loadFooterSection();
     //applyUpdatedSmoothScrolling is semi-functional on Firefox
     applySmoothScrolling("logoLink", "aboutMe");
 }
