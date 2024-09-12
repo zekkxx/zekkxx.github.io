@@ -1,3 +1,12 @@
+/*
+Orange: #F05916
+Dark Orange: #9B634B
+Cyan: 25EFD8
+Turquoise: #46B0A4
+Teal: #49706C
+Grey: #463D39
+*/
+
 html, body {
     height: 100%;
     width: 100%;
@@ -6,8 +15,8 @@ html, body {
 }
 
 html {
-    background-image: url(../images/Open_Sky.jpg);
-    background-color: #776B99;
+    /* background-image: url(../images/Open_Sky.jpg); */
+    background-color: #49706C;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -24,22 +33,22 @@ nav {
     z-index: 1;
     width: 100%;
     font-size: 1.5em;
-    background-color: #43464b;
+    background-color: #9B634B;
     top: 0;
     position: sticky;
     position: -webkit-sticky;
     border-bottom-style: solid;
     border-bottom-width: 3px;
-    border-bottom-color: #cccccc;
+    border-bottom-color: #463D39;
 }
 
 footer {
     width: 100%;
-    background-color: #43464b;
+    background-color: #9B634B;
     border-top-style: solid;
     border-top-width: 3px;
-    border-top-color: #cccccc;
-    color: #4aaaa5;
+    border-top-color: #463D39;
+    color: #25EFD8;
     text-align: center;
     font-size: 18px;
     padding: 15px 0;
@@ -74,18 +83,18 @@ footer {
     padding: 15px 0;
     width: 40%;
     text-align: center;
-    background-color: #cc5500;
+    background-color: #F05916;
 }
 
 .logo a {
-    color: #43464b;
+    color: #463D39;
     text-decoration: none;
 }
 
 .breakbar {
     height: 3px;
     margin-bottom: 2px;
-    background-color: #cccccc;
+    background-color: #463D39;
 }
 
 .project-content {
@@ -100,7 +109,7 @@ footer {
     width: 300px;
     bottom: 10%;
     color: white;
-    background-color: #4aaaa5;
+    background-color: #F05916;
     padding-top: 5%;
     padding-bottom: 5%;
     text-align: center;
@@ -159,10 +168,11 @@ footer {
 
     .logo {
         width: 100%;
+        background-color: #9B634B;
     }
 
     #main {
-        margin-top: 20%;
+        margin-top: 10%;
     }
 }
 

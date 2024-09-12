@@ -1,14 +1,18 @@
 var projects = [
-    {"name": "Game Collection", "img":"trivia_game", "link": "https://zekkxx.github.io/games/", "repo": "https://github.com/zekkxx/games"},
-    {"name": "Prota", "img": "prota", "link": "https://prota.herokuapp.com", "repo":"https://github.com/zekkxx/prota"}
+    {"name": "Game Collection", "img":"trivia_game", "link": "https://zekkxx.github.io/games/", "repo": "https://github.com/zekkxx/games"}
+    // {"name": "Prota", "img": "prota", "link": "https://prota.herokuapp.com", "repo":"https://github.com/zekkxx/prota"}
 ];
 
 var outsideLinks = [
     {"name": "LinkedIn", "link": "https://www.linkedin.com/in/kieran-anthony-415908b4/"},
     {"name": "Github", "link": "https://github.com/zekkxx"},
     {"name": "Youtube", "link": "https://www.youtube.com/channel/UC3DX7Leok4fRNvY4IXo3MTg/"},
-    {"name": "Twitch", "link": "twitch.tv/mizakuma/"}
+    {"name": "Twitch", "link": "https://www.twitch.tv/mizakuma/"}
 ];
+
+const personalBio = "Full Stack Developer with skills in backend architecture and design. Versed in error prevention, code refinement, and quality assurance testing for multi-platform projects. Effective communicator with strengths in problem solving, lateral and analytical thinking. Proven ability to work collaboratively in a diverse and fast moving environment to deliver solutions at and above project expectations."
+const personalLocation = "Minnesota";
+const personalJobAvailability = true;
 
 function loadProjectSection() {
     const projectSection = document.createElement("section");
@@ -77,10 +81,10 @@ function loadAboutMeSection() {
     breakBar.setAttribute("class", "breakbar");
 
     const description = document.createElement("p");
-    description.textContent= "Full Stack Developer with skills in backend architecture and design. Versed in error prevention, code refinement, and quality assurance testing for multi-platform projects. Effective communicator with strengths in problem solving, lateral and analytical thinking. Proven ability to work collaboratively in a diverse and fast moving environment to deliver solutions at and above project expectations."
+    description.textContent= personalBio;
     
     const location = document.createElement("p");
-    location.textContent= "Based out of Minnesota, I'm currently looking for jobs in and around the Twin Cities Metro Area.";
+    location.textContent= `Based out of ${personalLocation}${personalJobAvailability ? ", I'm currently looking for jobs in and around the Twin Cities Metro Area": ""}.`;
 
     const specialLinks = document.createElement("h3");
     specialLinks.setAttribute("class", "centered");
