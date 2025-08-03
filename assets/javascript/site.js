@@ -83,7 +83,7 @@ function loadAboutMeSection() {
     description.textContent= personalBio;
     
     const location = document.createElement("p");
-    location.textContent= `Based out of ${personalLocation}${personalJobAvailability ? ", I'm currently looking for jobs in and around the Twin Cities Metro Area, or remotely.": ""}.`;
+    location.textContent= `Based out of ${personalLocation}${personalJobAvailability ? ", I'm currently looking for jobs remotely or around the Twin Cities Metro Area": ""}.`;
 
     const specialLinks = document.createElement("h3");
     specialLinks.setAttribute("class", "centered");
