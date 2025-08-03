@@ -16,7 +16,7 @@ html, body {
 
 html {
     /* background-image: url(../images/Open_Sky.jpg); */
-    background-color: #49706C;
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -33,7 +33,7 @@ nav {
     z-index: 1;
     width: 100%;
     font-size: 1.5em;
-    background-color: #9B634B;
+    background-color: #012031;
     top: 0;
     position: sticky;
     position: -webkit-sticky;
@@ -44,7 +44,7 @@ nav {
 
 footer {
     width: 100%;
-    background-color: #9B634B;
+    background-color: #012031;
     border-top-style: solid;
     border-top-width: 3px;
     border-top-color: #463D39;
@@ -83,11 +83,11 @@ footer {
     padding: 15px 0;
     width: 40%;
     text-align: center;
-    background-color: #F05916;
+    background-color: #9B634B;
 }
 
 .logo a {
-    color: #463D39;
+    color: black;
     text-decoration: none;
 }
 
@@ -109,7 +109,7 @@ footer {
     width: 300px;
     bottom: 10%;
     color: white;
-    background-color: #F05916;
+    background-color: #9B634B;
     padding-top: 5%;
     padding-bottom: 5%;
     text-align: center;
