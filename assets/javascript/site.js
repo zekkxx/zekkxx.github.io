@@ -6,11 +6,10 @@ var projects = [
 var outsideLinks = [
     {"name": "LinkedIn", "link": "https://www.linkedin.com/in/kieran-anthony-415908b4/"},
     {"name": "Github", "link": "https://github.com/zekkxx"},
-    {"name": "Youtube", "link": "https://www.youtube.com/channel/UC3DX7Leok4fRNvY4IXo3MTg/"},
-    {"name": "Twitch", "link": "https://www.twitch.tv/mizakuma/"}
+    {"name": "Youtube", "link": "https://www.youtube.com/channel/UC3DX7Leok4fRNvY4IXo3MTg/"}
 ];
 
-const personalBio = "Full Stack Developer with skills in backend architecture and design. Versed in error prevention, code refinement, and quality assurance testing for multi-platform projects. Effective communicator with strengths in problem solving, lateral and analytical thinking. Proven ability to work collaboratively in a diverse and fast moving environment to deliver solutions at and above project expectations."
+const personalBio = "I am an experienced Full Stack Software Engineer with nearly 5 years of industry experience. In addition to the skills in React, Node, and MSSQL that I developed in my time with Longevity, I have developed skills working to teach others computer science during my time at Trilogy Education, and as a personal tutor outside of these roles. My main strengths lie in problem solving, solution building, as well as lateral and analytical thinking. I have a proven ability to work collaboratively in a diverse and fast moving environment while delivering solutions at and above project expectations."
 const personalLocation = "Minnesota";
 const personalJobAvailability = true;
 
@@ -94,7 +93,7 @@ function loadAboutMeSection() {
     contactLink.textContent = "Contact me by email";
     
     const resumeLink = document.createElement("a");
-    resumeLink.setAttribute("href", "https://docs.google.com/document/d/1hXVjw8xJ1YroslU6x8WRzVOR65WOAay92RGR-t5AEP8/export?format=pdf");
+    resumeLink.setAttribute("href", "https://docs.google.com/document/d/1FXjlRAosKuXHqT6Y6M6MOav1GGa8WGBhlnjkvCptMt4/export?format=pdf");
     resumeLink.setAttribute("download", "Kieran_Anthony-Resume.pdf");
     resumeLink.textContent = "Download my resume";
     
