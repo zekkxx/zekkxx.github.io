@@ -155,7 +155,7 @@ footer {
     border: 5px solid black;
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 850px){
     nav {
         position: fixed;
         width:100%;
@@ -171,9 +171,14 @@ footer {
         background-color: #012031;
     }
 
+    .logo a {
+        color: white;
+    }
+
     #main {
         margin-top: 10%;
     }
+
 }
 
 @media only screen and (max-width: 600px){
@@ -181,7 +186,7 @@ footer {
         justify-content: center;
         width:100%;
     }
-    
+
     #aboutMe {
         padding-top: 75px;
     }
@@ -190,5 +195,9 @@ footer {
 @media only screen and (max-width: 400px){
     html{
         background-image: none;
+    }
+    
+    #aboutImg {
+        float: none;
     }
 }
