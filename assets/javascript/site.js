@@ -1,5 +1,5 @@
 var projects = [
-    {"name": "Game Collection", "img":"trivia_game", "link": "https://zekkxx.github.io/games/", "repo": "https://github.com/zekkxx/games"}
+    {"name": "The arKade", "img":"trivia_game", "link": "https://zekkxx.github.io/arKade/", "repo": "https://github.com/zekkxx/arKade"}
     // {"name": "Prota", "img": "prota", "link": "https://prota.herokuapp.com", "repo":"https://github.com/zekkxx/prota"}
 ];
 
